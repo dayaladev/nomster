@@ -82,3 +82,9 @@ gem 'font-awesome-rails'
 
 # Devise
 gem 'devise'
+
+# Google API
+gem 'geocoder'
+
+# Figaro
+gem 'figaro'
