@@ -26,7 +26,7 @@
     </script>
     <div id="map"></div>
   <% end %>
-  <br />
+  <br />  
   <div  class="float-right">
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
@@ -36,11 +36,15 @@
     <% end %>
   </div>
   <div class="clear"></div>
+  <br />
+  <div class="col-10 offset-1">
+  <h1 class="float-left">Comments</h1>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
   Add a Comment
 </button>
-
+</div>
+<div class="clear"></div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -65,10 +69,9 @@
   </div>
 </div>
   <br />
-  <br />
-  <h1>Comments</h1>
+  <div class="row">
   <% @place.comments.each do |comment| %>
-    <div>
+    <div class="col-12 col-sm-6">
       <blockquote>
         <% if comment.humanized_rating.present? %>
           <b><%= comment.humanized_rating %></b> - 
@@ -78,5 +81,5 @@
       </blockquote>
     </div>
   <% end %>
-  <br />
+  </div>
 </div>
